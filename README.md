@@ -1,4 +1,4 @@
-![Banner](banner.png)
+![Banner](banner_textoVOZ.png)
 
 # 🗣️ Texto a Voz - Conversor Inteligente Multilenguaje
 
