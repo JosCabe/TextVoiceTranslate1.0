@@ -10,12 +10,12 @@ from Core.g_gestor_interaccion import GestorInteraccion
 def main():
     print("🟢 Iniciando aplicación Texto a Voz...")
 
-    # 1. Leer texto
+    #Leer texto
     lector = LectorTexto()
     lector.leer_input()
     texto_original = lector.get_texto()
 
-    # 2. Procesar texto (resumen si tiene más de 100 palabras)
+    #Procesar texto (resumen si tiene más de 100 palabras)
     procesador = ProcesadorTexto()
     procesador.set_texto(texto_original)
 
@@ -24,19 +24,19 @@ def main():
 
     texto_procesado = procesador.get_texto()
 
-    # 3. Convertir a voz
+    #Convertir a voz
     conversor = ConversorVoz()
     ruta_original, idioma_detectado = conversor.convertir(texto_procesado, nombre_base="audio_original")
 
-    # 4. Acelerar audio
+    #Acelerar audio
     editor = EditorAudio()
     ruta_acelerado = editor.acelerar_audio(ruta_original, idioma_detectado.upper())
 
-    # 5. Reproducir audio
+    # Reproducir audio
     reproductor = ReproductorAudio()
     reproductor.reproducir(ruta_acelerado)
 
-    # 6. Preguntar si eliminar archivos
+    #Preguntar si eliminar archivos
     if GestorInteraccion.preguntar_eliminacion():
         archivos = GestorArchivos()
         archivos.eliminar_archivos([ruta_original, ruta_acelerado])
