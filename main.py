@@ -15,7 +15,7 @@ def main():
     lector.leer_input()
     texto_original = lector.get_texto()
 
-    #Procesar texto (resumen si tiene más de 100 palabras)
+    #Procesar texto (resumen si tiene más de 99 palabras)
     procesador = ProcesadorTexto()
     procesador.set_texto(texto_original)
 
